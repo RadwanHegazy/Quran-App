@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="{% static 'index.css' %}">
+</head>
+<body>
+
+    <div class="up">
+        <div class="right">
+            <h1>القرأن الكريم</h1>
+            <p>قرائة وسماع ما تيسر من القرأن الكريم </p>
+            <p>منصة الكترونية للمسلمين</p>
+        </div>
+        <div class="left">
+            <img src="{% static 'images/man.png' %}" alt="">
+        </div>
+    </div>
+
+    <div class="sp"></div>
+
+    <div class="title">
+        <img src="{% static 'images/quran.png' %}" alt="">
+        <p>القرأن</p>
+    </div>
+
+    <form method="GET">
+        <div class="search">
+            <input name="q" type="text" placeholder="بحث...">
+        </div>
+    </form>
+
+
+
+    <div class="surahs">
+
+        {% for i in surahs %}
+            <a href="{% url 'read' i.surah_uid %}" class="box">
+                {{ i.surah_name }}
+            </a>
+        {% endfor %}
+
+    </div>
+    
+</body>
+</html>

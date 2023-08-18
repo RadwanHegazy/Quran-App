@@ -1,0 +1,57 @@
+{
+	"info": {
+		"_postman_id": "030bdf18-3ffa-498b-a1e1-4d2d4ac0e77e",
+		"name": "Quran App Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21751929"
+	},
+	"item": [
+		{
+			"name": "Surah",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/surah/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"surah",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ayah",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/surah/<surahid>/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"surah",
+						"<surahid>",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

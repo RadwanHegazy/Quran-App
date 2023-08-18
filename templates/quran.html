@@ -1,0 +1,93 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quran</title>
+    <link rel="stylesheet" href="{% static 'quran.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" /></head>
+<body>
+    
+    <div class="home">
+        <img src="{% static 'images/bg4.png' %}" alt="">
+        
+        <div class="clip">
+        
+            <div class="title">
+                {{ name }}
+            </div>
+        
+            <div class="down">
+                <p>{{ type }}</p>
+                <p> {{ ayahs_num }} : عدد الايات </p>
+            </div>
+        
+
+            <div class="quran">
+                
+            </div>
+
+            <div class="options">
+                <button class="fa fa-arrow-left prev"></button>
+                <button class="fa fa-volume-up play"></button>
+                <button class="fa fa-arrow-right next"></button>
+            </div>
+        </div>
+        <audio src="" id="sound"></audio>
+
+    
+    </div>
+
+
+    <script>
+
+        const ayahs = '{{words}}'.split('@');
+        const audio = '{{audio}}'.split('@');
+
+
+        var text = document.querySelector('.quran');
+        var next = document.querySelector('.next')
+        var prev = document.querySelector('.prev')
+        var play = document.querySelector('.play')
+
+        const allText = ayahs;
+        var n = 0;
+        text.textContent = allText[n]
+        
+        next.addEventListener('click',function(){
+            if (n == allText.length - 1){
+                text.textContent = allText[allText.length - 1]
+            }else{
+                n++
+                text.textContent = allText[n]
+            }
+        })
+
+        prev.addEventListener('click',function(){
+            if (n == 0){
+                text.textContent = allText[0]
+            }else{
+                n--
+                text.textContent = allText[n]
+            }
+        })
+
+
+        play.addEventListener('click',function(){
+            this.classList.add('dis')
+            this.disabled = true
+            var audio_url = audio[n];
+            var a = new Audio();
+            a.src = audio_url;
+            a.play()
+            
+            a.onended = function(){
+                play.classList.remove('dis')
+                play.disabled = false
+            }
+        })
+    </script>
+</body>
+</html>

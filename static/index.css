@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo&family=Reem+Kufi:wght@500&display=swap');
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+:root{
+    --h-font:'Reem Kufi', sans-serif;
+    --primary-font:'Cairo', sans-serif;
+    --grenn:#2EF54F;
+}
+
+.up {
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    direction: rtl;
+}
+
+.up div {
+    width: 50%;
+    height: 100%;
+}
+
+.up .right{
+    padding-right: 7rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: right;
+    align-items: center;
+}
+
+.up .right *{
+    width: 100%;
+}
+
+.up .right h1 {
+    font-family: var(--h-font);
+    color: var(--grenn);
+    font-size: 5rem;
+    animation: view 1s ease;
+}
+
+.up .right p {
+    font-family: var(--primary-font);
+    font-size: 2rem;
+    color: #c6c6c6;
+    animation: view 1.3s ease;
+}
+
+
+.up .left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+
+.up .left img {
+    width: auto;
+    height: 70%;
+    animation: view 1.8s ease;
+}
+
+
+
+
+.sp {
+    position: relative;
+    margin: 30px auto;
+    background-color: #c6c6c6;
+    height: 1px;
+
+    animation: viewsp 1s ease ;
+    width: 55%;
+}
+
+@keyframes viewsp{
+    from {
+        width: 0%;
+    }
+    to{
+        width: 55%;
+    }
+}
+
+@media (max-width:900px){
+    .up {
+        flex-direction: column;
+        height: auto;
+        gap: 100px;
+        justify-self: center;
+        width: 100%;
+    }
+
+    .up .right {
+        width: 100%;
+    }
+}
+
+
+.title {
+    position: relative;
+    width: 100%;
+    margin: 30px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    animation: view 1s ease;
+}
+
+.title p {
+    font-family: var(--primary-font);
+    color: #c6c6c6;
+    font-size: 2rem;
+}
+
+.title img {
+    height: 100%;
+    width: auto;
+}
+
+
+.search {
+    width: 100%;
+    position: relative;
+    margin: 60px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search input {
+    width: 50%;
+    padding: 1rem;
+    direction: rtl;
+    font-size: 1.2rem;
+    font-family: var(--primary-font);
+    border: none;
+    outline: none;
+    background-color: #f6f6f6;
+    border-radius: 50px;
+    color: #c6c6c6;
+    padding-right: 30px;
+    transition: all 0.4s ease;
+}
+
+.search input:focus {
+    box-shadow: 0px 0px 12px rgba(86, 211, 9, 0.616);
+    color: var(--grenn);
+    transform: translateY(-10px);
+}
+
+
+
+.surahs{
+    display: flex;
+    width: 70%;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    gap: 70px;
+    flex-wrap: wrap;
+}
+
+.surahs a {
+    width: 239px;
+    height: 218px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--h-font);
+    text-decoration: none;
+    font-size: 1.5rem;
+    background-color: #fff;
+    border-radius: 30px;
+    color: #c6c6c6;
+    box-shadow:0px 0px 11px rgba(0, 0, 0, 0.049);
+    transition: all 0.4s ease;
+}
+
+.surahs a:hover {
+    color: #fff;
+    font-size: 2rem;
+    background-color: var(--grenn);
+    cursor: pointer;
+    box-shadow:0px 0px 11px rgba(14, 199, 14, 0.534);
+
+}
+
+
+
+@keyframes view {
+    from{
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
